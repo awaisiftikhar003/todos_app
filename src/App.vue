@@ -5,7 +5,7 @@
     <TaskForm v-show="showAddTask" @save-task="saveTask" />
     <Tasks
       @delete-task="deleteTask"
-      @toggle-reminder="toggleReminder"
+      @toggle-status="togglestatus"
       :tasks="tasks"
     />
   </div>
@@ -56,7 +56,7 @@ export default {
         });
       }
     },
-    toggleReminder(id) {
+    togglestatus(id) {
       this.tasks.map((task) => {
         if (task.id == id) {
           task.status = !task.status;
@@ -65,7 +65,6 @@ export default {
     },
     addTask() {
       this.showAddTask = !this.showAddTask;
-      console.log("you add a task", this.showAddTask);
     },
     saveTask(newTask) {
       this.tasks.push(newTask);

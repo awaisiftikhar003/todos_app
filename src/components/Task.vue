@@ -1,7 +1,7 @@
 <template>
   <div
-    @dblclick="$emit('toggle-reminder', task.id)"
-    :class="[task.status ? 'reminder' : '', 'task']"
+    @dblclick="$emit('toggle-status', task.id)"
+    :class="[task.status ? 'status' : '', 'task']"
   >
     <h3>
       {{ task.text }}
@@ -32,7 +32,7 @@ export default {
   cursor: pointer;
   text-align: start;
 }
-.task.reminder {
+.task.status {
   border-left: 5px solid green;
 }
 .task h3 {
